@@ -18,6 +18,7 @@ function loopfile($basedir){
                      // deal filename function here;
                      // deal filename function end ;
                 }else{
+                    //echo "dir_name: " . $dirname . "/\r\n";
                     loopfile($dirname);
                 }
             }
