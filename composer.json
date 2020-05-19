@@ -1,3 +1,7 @@
 {
-    "name": "52linux/loopdird"
+    "name": "52linux/loopdird",
+    "require": {
+        "monolog/monolog": "1.0.*"
+    }
+     "version": "1.0.0"
 }
