@@ -1,5 +1,5 @@
 {
-    "name": "52linux/loopdird",
+    "name": "52linux/loopdir",
     "require": {
         "monolog/monolog": "1.0.*"
     },
