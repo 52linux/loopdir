@@ -9,17 +9,15 @@ loopfile($basedir);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function loopfile($basedir){
-    if ($dh = opendir($basedir)) {
+    $arr=array();
+    if (is_dir($basedir) && $dh = opendir($basedir)) {
         while (($file = readdir($dh)) !== false) {
             if ($file != '.' && $file != '..'){
-                $dirname = $basedir. DIRECTORY_SEPARATOR . $file;
-                if (!is_dir($dirname)) {
-                     echo "filename: " . $dirname .  "<br>";
-                     // deal filename function here;
-                     // deal filename function end ;
+                $filename = $basedir. DIRECTORY_SEPARATOR . $file;
+                if (!is_dir($filename)) {
+                      $arr[]=$filename;
                 }else{
-                    //echo "dir_name: " . $dirname . "/\r\n";
-                    loopfile($dirname);
+                    loopfile($filename);
                 }
             }
         }
@@ -28,14 +26,13 @@ function loopfile($basedir){
 }
 
 function loopdir($basedir){
+    $arr=array();
     if (is_dir($basedir) && $dh = opendir($basedir)) {
         while (($file = readdir($dh)) !== false) {
             if ($file != '.' && $file != '..'){
                 $dirname = $basedir. DIRECTORY_SEPARATOR . $file;
                 if (is_dir($dirname)) {
-                    echo "dirname: " . $dirname .  "<br>";
-                    // deal dir function here;
-                    // deal dir function end ;
+                    $arr[]=$dirname;
                     loopdir($dirname);
                 } 
             }
