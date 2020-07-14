@@ -9,7 +9,7 @@ loopfile($basedir);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function loopfile($basedir){
-    $arr=array();
+    static $arr=array();
     if (is_dir($basedir) && $dh = opendir($basedir)) {
         while (($file = readdir($dh)) !== false) {
             if ($file != '.' && $file != '..'){
@@ -28,7 +28,7 @@ function loopfile($basedir){
 }
 
 function loopdir($basedir){
-    $arr=array();
+    static $arr=array();
     if (is_dir($basedir) && $dh = opendir($basedir)) {
         while (($file = readdir($dh)) !== false) {
             if ($file != '.' && $file != '..'){
