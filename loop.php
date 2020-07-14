@@ -23,6 +23,8 @@ function loopfile($basedir){
         }
         closedir($dh);
     }
+    return $arr;
+
 }
 
 function loopdir($basedir){
@@ -39,4 +41,6 @@ function loopdir($basedir){
         }
         closedir($dh);
     }
+     return $arr;
+
 }
